@@ -64,7 +64,7 @@ class ViewController: UITableViewController {
     // MARK: - Convenience
     
     func configureNavigationController() {
-        navigationController?.hidesBarsOnSwipe = true
+        navigationController?.hidesBarsOnTap = true
     }
 
 }
