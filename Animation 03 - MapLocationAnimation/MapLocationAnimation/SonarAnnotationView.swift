@@ -76,12 +76,16 @@ class SonarAnnotationView: MKAnnotationView {
         
         // Add the animation to the layer.
         shapeLayer.addAnimation(animationGroup, forKey: "sonar")
+
+        
     }
     
     func startAnimation() {
         sonar(CACurrentMediaTime())
         sonar(CACurrentMediaTime() + 0.92)
         sonar(CACurrentMediaTime() + 1.84)
+        
+        
     }
     
 }
