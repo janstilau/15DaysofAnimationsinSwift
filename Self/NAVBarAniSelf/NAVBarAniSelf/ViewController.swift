@@ -48,7 +48,5 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.entryImageView.image = entry.image
         return cell
     }
-
-
 }
 

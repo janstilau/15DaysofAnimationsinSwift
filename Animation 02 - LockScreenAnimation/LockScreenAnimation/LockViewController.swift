@@ -22,7 +22,14 @@ class LockViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+       
+    }
+    
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        
         openLock()
+        
     }
     
     // MARK: Convenience

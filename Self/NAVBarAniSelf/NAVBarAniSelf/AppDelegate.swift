@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let gray = UIColor.init(red: 0.20, green: 0.20, blue: 0.20, alpha: 1.0)
     
     func configureNavigationBar() {
-        UINavigationBar.appearance().translucent = false
+        UINavigationBar.appearance().translucent = true
         UINavigationBar.appearance().opaque = true
         UINavigationBar.appearance().barTintColor = UIColor.blueColor()
         UINavigationBar.appearance().tintColor = UIColor.yellowColor()
@@ -46,6 +46,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard let statusBar = UIApplication.sharedApplication().valueForKey("statusBarWindow")?.valueForKey("statusBar") as? UIView else {
             return
         }
+        
+        
         
         statusBar.backgroundColor = color
     }
