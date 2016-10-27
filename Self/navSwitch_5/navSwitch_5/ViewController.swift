@@ -93,6 +93,8 @@ class ViewController: UIViewController {
         animateConstrintsForUnderlineView(underlineView,toSide:  .Right)
     }
     
+    
+    // 实现证明,如果一个constraint的active设置为false,那么这个constriant会马上从view上面被移除.这个view,应该在它所影响的两个view的最小公父view上.
     func animateConstrintsForUnderlineView(underlineView: UIView, toSide: Side){
         
         switch toSide {
