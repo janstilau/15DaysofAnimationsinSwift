@@ -26,6 +26,9 @@
                                         <state key="normal" title="Left">
                                             <color key="titleColor" red="0.0" green="0.8666666666666667" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="goLeft:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y8R-8b-VjV"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JYO-JV-Ogp">
                                         <rect key="frame" x="300" y="0.0" width="300" height="44"/>
@@ -33,6 +36,9 @@
                                         <state key="normal" title="Right">
                                             <color key="titleColor" red="0.0" green="0.8666666666666667" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="goRight:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xoe-31-tN7"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -48,6 +54,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="ME" id="TPg-3k-8Zo"/>
+                    <connections>
+                        <outlet property="goRight" destination="JYO-JV-Ogp" id="Njz-Da-HUL"/>
+                        <outlet property="optionsBar" destination="6y7-MO-7Nn" id="Vfg-nZ-jRz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
