@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LoadingDotsAnimation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LoadingDots_4_self" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,25 +17,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9iw-2d-qCM" customClass="LoadingDots" customModule="LoadingDotsAnimation" customModuleProvider="target">
-                                <rect key="frame" x="217" y="245" width="166" height="110"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yvq-45-efi" customClass="LoadingDots" customModule="LoadingDots_4_self" customModuleProvider="target">
+                                <rect key="frame" x="217" y="250" width="166" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="166" id="9ji-Fu-foH"/>
-                                    <constraint firstAttribute="height" constant="110" id="AaX-TP-h2E"/>
+                                    <constraint firstAttribute="height" constant="100" id="nfd-5v-jNv"/>
+                                    <constraint firstAttribute="width" constant="166" id="q60-Nj-CBM"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="9iw-2d-qCM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Jef-V4-2D5"/>
-                            <constraint firstItem="9iw-2d-qCM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aXc-ey-sOT"/>
+                            <constraint firstItem="Yvq-45-efi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="lU3-UP-rMD"/>
+                            <constraint firstItem="Yvq-45-efi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pXW-3B-rpy"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loadingDots" destination="Yvq-45-efi" id="vcZ-dl-09Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="479" y="594"/>
         </scene>
     </scenes>
 </document>
