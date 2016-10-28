@@ -1,18 +1,17 @@
 //
 //  ProgressView.swift
-//  ProgressAnimation
+//  ProgressAnimation_7
 //
-//  Created by Larry Natalicio on 4/22/16.
-//  Copyright © 2016 Larry Natalicio. All rights reserved.
+//  Created by jansti on 16/10/28.
+//  Copyright © 2016年 jansti. All rights reserved.
 //
 
 import UIKit
 
-@IBDesignable
-class ProgressView: UIView {
+
+class ProgressView: UIView{
     
     // MARK: - Types
-    
     struct Constants {
         struct ColorPalette {
             static let teal = UIColor(red:0.27, green:0.80, blue:0.80, alpha:1.0)
@@ -22,44 +21,35 @@ class ProgressView: UIView {
     }
     
     // MARK: - Properties
-
+    
     let progressLayer = CAShapeLayer()
     let gradientLayer = CAGradientLayer()
     
     var range: CGFloat = 128
-    var curValue: CGFloat = 0 {
+    var currentValue: CGFloat = 0{
         didSet {
             animateStroke()
         }
     }
     
-    // MARK: - View Life Cycle
+    // MARK: - ViewLifeCycle
     
     override func awakeFromNib() {
-        super.awakeFromNib()
         
-        setupLayers()
-    }
-
-    override func prepareForInterfaceBuilder() {
-        super.prepareForInterfaceBuilder()
-        
-        // prepareForInterfaceBuilder is used with @IBDesignable to display
-        // this view in the Storyboard.
-        setupLayers()
+        setupLayer()
     }
     
-    // MARK: - Convenience
+    // MARK: - setupLayer
     
-    func setupLayers() {
+    func setupLayer() {
         
         // Setup progress layer.
-//        progressLayer.position = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2)
+        //        progressLayer.position = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2)
         progressLayer.lineWidth = 3.0
         progressLayer.strokeEnd = 0.0
         progressLayer.fillColor = nil
         progressLayer.strokeColor = UIColor.blackColor().CGColor
-
+        
         let radius = CGFloat(self.bounds.height/2) - progressLayer.lineWidth
         let startAngle = CGFloat(-M_PI / 2)
         let endAngle = CGFloat(3 * M_PI / 2)
@@ -67,9 +57,10 @@ class ProgressView: UIView {
         let height = CGRectGetHeight(self.bounds)
         let modelCenter = CGPointMake(width / 2, height / 2)
         let path = UIBezierPath(arcCenter: modelCenter, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
-
+        
         progressLayer.path = path.CGPath
-
+        self.layer .addSublayer(progressLayer)
+        
         
         
         // Setup gradient layer.
@@ -81,9 +72,11 @@ class ProgressView: UIView {
         layer.addSublayer(gradientLayer)
     }
     
-    func animateStroke() {
+    
+    // MARK: - Animation
+    func animateStroke(){
         let fromValue = progressLayer.strokeEnd
-        let toValue = curValue / range
+        let toValue = currentValue / range
         
         let animation = CABasicAnimation(keyPath: "strokeEnd")
         animation.fromValue = fromValue
@@ -92,6 +85,7 @@ class ProgressView: UIView {
         progressLayer.addAnimation(animation, forKey: "stroke")
         progressLayer.strokeEnd = toValue
     }
-
+    
 }
+
 

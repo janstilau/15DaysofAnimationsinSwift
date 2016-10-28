@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ProgressAnimation_7" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 Gallon A Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Nn-oZ-ntL">
+                                <rect key="frame" x="0.0" y="70" width="600" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZiG-pq-2P4">
+                                <rect key="frame" x="275" y="450" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="BuH-at-3eL"/>
+                                    <constraint firstAttribute="width" constant="50" id="MLb-xl-eQd"/>
+                                </constraints>
+                                <color key="tintColor" red="0.0" green="0.86666666670000003" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nz4-e5-R4V" customClass="ProgressView" customModule="ProgressAnimation_7" customModuleProvider="target">
+                                <rect key="frame" x="175" y="175" width="250" height="250"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="ZJz-AS-4s4"/>
+                                    <constraint firstAttribute="width" constant="250" id="wh6-AS-fmN"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XgB-IF-3BD">
+                                <rect key="frame" x="267" y="265" width="67" height="70"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="I4r-FM-aRh">
+                                        <rect key="frame" x="0.0" y="0.0" width="67" height="49"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCK-iF-bL3">
+                                                <rect key="frame" x="0.0" y="0.0" width="26" height="49"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="41"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTy-Dy-uCP">
+                                                <rect key="frame" x="36" y="0.0" width="31" height="49"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="41"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Pll-kz-3uR">
+                                        <rect key="frame" x="0.0" y="49" width="67" height="21"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GALLON" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAw-mU-KHy">
+                                                <rect key="frame" x="0.0" y="0.0" width="67" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XgB-IF-3BD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="BSp-o3-IkE"/>
+                            <constraint firstItem="nz4-e5-R4V" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="I46-ux-r4j"/>
+                            <constraint firstAttribute="trailing" secondItem="3Nn-oZ-ntL" secondAttribute="trailing" id="eXF-TO-fb3"/>
+                            <constraint firstItem="3Nn-oZ-ntL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="jxv-ca-OfB"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ZiG-pq-2P4" secondAttribute="bottom" constant="100" id="myP-if-YEj"/>
+                            <constraint firstItem="3Nn-oZ-ntL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="p4v-cJ-LkF"/>
+                            <constraint firstItem="nz4-e5-R4V" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qg0-MS-1iS"/>
+                            <constraint firstItem="ZiG-pq-2P4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qho-7a-JQ6"/>
+                            <constraint firstItem="XgB-IF-3BD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s8r-FV-Rbg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="incrementProgressButton" destination="ZiG-pq-2P4" id="rfD-uZ-Hwr"/>
+                        <outlet property="progressPercentageLabel" destination="DCK-iF-bL3" id="INv-Is-Nzc"/>
+                        <outlet property="progressView" destination="nz4-e5-R4V" id="nRg-HY-hhB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
