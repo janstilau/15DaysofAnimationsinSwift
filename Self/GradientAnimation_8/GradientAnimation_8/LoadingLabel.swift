@@ -8,7 +8,7 @@
 
 import UIKit
 
-
+@IBDesignable
 class LoadingLabel: UIView{
     
     // MARK: - Types
@@ -48,17 +48,40 @@ class LoadingLabel: UIView{
     
     @IBInspectable var text: String!{
         didSet {
+            setNeedsDisplay()
+            UIGraphicsBeginImageContextWithOptions(frame.size, false, 0)
+            text.drawInRect(bounds, withAttributes: textAttributes)
+            let image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
             
-            
-            
-            
+            let maskLayer = CALayer()
+            maskLayer.backgroundColor = UIColor.clearColor().CGColor
+            maskLayer.frame = CGRectOffset(bounds, bounds.size.width, 0)
+            maskLayer.contents = image.CGImage
+            gradientLayer.mask = maskLayer
         }
     }
     
+    // MARK: - View Life Cycle
+    override func layoutSubviews() {
+        gradientLayer.frame = CGRect(x: -bounds.size.width, y: bounds.origin.y, width: 2 * bounds.size.width, height: bounds.size.height)
+    }
     
-    
-    
-    
+    override func didMoveToWindow() {
+        
+        super.didMoveToWindow()
+        layer.addSublayer(gradientLayer)
+        
+        let gradientAnimation = CABasicAnimation(keyPath: "locations")
+        gradientAnimation.fromValue = [0.0, 0.0, 0.25]
+        gradientAnimation.toValue = [0.75, 1.0, 1.0]
+        gradientAnimation.duration = 1.7
+        gradientAnimation.repeatCount = Float.infinity
+        gradientAnimation.removedOnCompletion = false
+        gradientAnimation.fillMode = kCAFillModeForwards
+        
+        gradientLayer.addAnimation(gradientAnimation, forKey: nil)
+    }
 }
 
 
