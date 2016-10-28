@@ -85,7 +85,7 @@ class LoadingLabel: UIView {
         gradientAnimation.removedOnCompletion = false
         gradientAnimation.fillMode = kCAFillModeForwards
         
-        gradientLayer.addAnimation(gradientAnimation, forKey: nil)
+//        gradientLayer.addAnimation(gradientAnimation, forKey: nil)
     }
 
 }
