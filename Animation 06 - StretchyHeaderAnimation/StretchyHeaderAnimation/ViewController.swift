@@ -34,6 +34,8 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
         
         headerView = tableView.tableHeaderView
+        headerView.layer.borderColor = UIColor.redColor().CGColor
+        headerView.layer.borderWidth = 2.0
         tableView.tableHeaderView = nil
         
         tableView.addSubview(headerView)
