@@ -19,6 +19,26 @@ extension CGPath {
         CGPathApply(self, unsafeBody, callback)
     }
 }
+/* C funcaion
+ */
+
+class DemoClass{
+    
+    let swiftCallBack: @convention(c)(CGFloat, CGFloat) -> CGFloat  = {
+        (x, y) -> CGFloat in
+        
+        UIView.animateWithDuration(1, animations: { 
+            
+            }, completion: { (hehe) in
+                
+        })
+        
+        return x + y
+    }
+    
+    
+    
+}
 
 /* 
  Finds the first point in a path. Uses the CGPath extension created above.

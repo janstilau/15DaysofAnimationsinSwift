@@ -23,7 +23,7 @@ class LoadingDots: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        setupNib()
+        setupNib()// 这里,setupNib是手动加载nib文件,然后加到自己的view上面,完全覆盖添加
         startAnimation()
     }
     
@@ -32,7 +32,7 @@ class LoadingDots: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        setupNib()
+        setupNib()// 从stroyBoard里面加载这个view,是不会自动加载xib的内容的,必须手动加载一次.
         startAnimation()
     }
     
@@ -42,8 +42,6 @@ class LoadingDots: UIView {
         self.view = loadNib()
         self.view.frame = self.bounds
         
-        // Listen for UIApplicationDidBecomeActiveNotification notification to resume
-        // animation when the app returns from the background.
         registerForNotifications()
         
         self.addSubview(self.view)

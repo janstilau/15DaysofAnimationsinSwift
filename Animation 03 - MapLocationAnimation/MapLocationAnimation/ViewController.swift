@@ -19,6 +19,12 @@ class ViewController: UIViewController, MKMapViewDelegate {
         }
     }
     
+    struct Constantss {
+        struct MapViewIdentifiers {
+            static let sonarAnnotationView = "sonar"
+        }
+    }
+    
     // MARK: - Properties
 
     @IBOutlet var mapView: MKMapView!
@@ -68,6 +74,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
     func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius, regionRadius)
         mapView.setRegion(coordinateRegion, animated: false)
+
     }
     
     // MARK: - Status Bar

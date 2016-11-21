@@ -18,7 +18,7 @@ class ViewController: UIViewController {
             static let centerLeftConstraintIdentifier = "centerLeftConstraintIdentifier"
             static let centerRightConstraintIdentifier = "centerRightConstraintIdentifier"
             static let widthConstraintIdentifier = "widthConstraintIdentifier"
-        }
+        }// 约束的名字.
         
         struct ColorPalette {
             static let green = UIColor(red:0.00, green:0.87, blue:0.71, alpha:1.0)
@@ -43,6 +43,12 @@ class ViewController: UIViewController {
         
         configureNavBar()
     }
+    
+    func configureNavBar() {
+        self.navigationController?.navigationBar.barTintColor = Constants.ColorPalette.green
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+    }
+    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -91,11 +97,18 @@ class ViewController: UIViewController {
         let centerLeftConstraint = underlineView.centerXAnchor.constraintEqualToAnchor(leftButton.centerXAnchor)
         centerLeftConstraint.identifier = Constants.ConstraintIdentifiers.centerLeftConstraintIdentifier
         
+        
+        
         // The frame is not set here correctly so I update this value again in viewDidLayoutSubviews.
         let widthConstraint = underlineView.widthAnchor.constraintEqualToConstant((optionsBar.frame.width / 2.5))
         widthConstraint.identifier = Constants.ConstraintIdentifiers.widthConstraintIdentifier
         
         NSLayoutConstraint.activateConstraints([topConstraint, heightConstraint, widthConstraint, centerLeftConstraint])
+        
+        print("add constraint")
+        // 这里的topanchor,bottomanchor这些东西,很像UIView的添加约束的分类方法,可能是apple根据分类添加到了自己的系统库里面,不过需要注意的是,这些东西是在iOS9.0之后才使用的.
+        // 并且需要调用activeateConstraints才算是添加到了view上,在调用activeateConstraints之前,打印underview.constrains是没有元素的.
+        
     }
     
     func animateContraintsForUnderlineView(underlineView: UIView, toSide: Side) {
@@ -139,10 +152,6 @@ class ViewController: UIViewController {
         
     }
     
-    func configureNavBar() {
-        self.navigationController?.navigationBar.barTintColor = Constants.ColorPalette.green
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
-    }
-    
+ 
 }
 

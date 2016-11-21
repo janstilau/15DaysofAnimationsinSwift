@@ -23,6 +23,13 @@ class ViewController: UITableViewController {
         }
     }
     
+    
+//    struct Constantss{
+//        struct Images {
+//            static let one = "one"
+//        }
+//    }
+//    
     // MARK: - Properties
 
     var entries = [
@@ -65,6 +72,7 @@ class ViewController: UITableViewController {
     
     func configureNavigationController() {
         navigationController?.hidesBarsOnTap = true
+        navigationController?.hidesBarsOnSwipe = true
     }
 
 }

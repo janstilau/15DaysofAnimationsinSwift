@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  NavigationBarAnimation
+//  SpotLightDemo
 //
-//  Created by Larry Natalicio on 4/15/16.
-//  Copyright © 2016 Larry Natalicio. All rights reserved.
+//  Created by jansti on 16/11/2.
+//  Copyright © 2016年 jansti. All rights reserved.
 //
 
 import UIKit
@@ -16,10 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
-        configureNavigationBar()
-        configureStatusBar()
-        
         return true
     }
 
@@ -44,43 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-    
-    // MARK: - Convenience
-    
-    let gray = UIColor(red:0.20, green:0.20, blue:0.20, alpha:1.0)
-    
-    
-    
-    
 
-    func configureNavigationBar() {
-        UINavigationBar.appearance().translucent = false// 这个属性,控制navigationbar的透视效果
-        UINavigationBar.appearance().opaque = true // 这个是渲染性能的属性,可以不设置,一般也不设置
-        UINavigationBar.appearance().barTintColor = gray //apply to the navigation bar background.
-        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()] // 设置字体颜色
-    }
-    
-    func configureStatusBar() {
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
-        setStatusBarBackgroundColor(gray)
-    }
-    
-    func setStatusBarBackgroundColor(color: UIColor) {
-        
-        guard let statusBar = UIApplication.sharedApplication().valueForKey("statusBarWindow")?.valueForKey("statusBar") as? UIView else {
-            return
-        }
-        
-
-        statusBar.backgroundColor = color
-        
-        
-        //
-        //        guard let statusbars = UIApplication.sharedApplication().valueForKey("statusBarWindow")?.valueForKey("statusBar") as? UIView else {
-        //            return
-        //        }
-        //        statusbars.backgroundColor = nil
-    }
 
 }
+

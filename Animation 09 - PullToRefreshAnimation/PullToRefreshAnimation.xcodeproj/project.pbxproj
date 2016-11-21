@@ -77,7 +77,6 @@
 		46A3D8391CD4589800D0844B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				46F0363A1CC2B7EA0041AFD7 /* GlobalFunctions.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -103,6 +102,7 @@
 			children = (
 				46F0362A1CC2B4D50041AFD7 /* Main.storyboard */,
 				46F0362F1CC2B4D50041AFD7 /* LaunchScreen.storyboard */,
+				46F0363A1CC2B7EA0041AFD7 /* GlobalFunctions.swift */,
 				46F036261CC2B4D50041AFD7 /* AppDelegate.swift */,
 				468DE29E1CD454000053822F /* Views */,
 				468DE29D1CD453F90053822F /* Controllers */,

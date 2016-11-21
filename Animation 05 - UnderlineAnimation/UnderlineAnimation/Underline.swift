@@ -18,6 +18,13 @@ class Underline: UIView {
             static let green = UIColor(red:0.00, green:0.87, blue:0.71, alpha:1.0)
         }
     }
+    
+    
+//    struct Constantss{
+//        struct ColorPalette{
+//            static let green = UIColor.whiteColor()
+//        }
+//    }
 
     // MARK: - Initiazlizers
     
@@ -42,7 +49,7 @@ class Underline: UIView {
     func commonInit() {
         self.backgroundColor = Constants.ColorPalette.green
         self.translatesAutoresizingMaskIntoConstraints = false
-
+        
     }
     
 }

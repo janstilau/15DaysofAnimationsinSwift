@@ -19,6 +19,12 @@ class SonarAnnotationView: MKAnnotationView {
         }
     }
     
+    struct Constantss {
+        struct ColorPalette{
+            static let white = UIColor.whiteColor()
+        }
+    }
+    
     // MARK: - Initializers
     
     override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
@@ -45,6 +51,9 @@ class SonarAnnotationView: MKAnnotationView {
         // The circle in its largest size.
         let circlePath2 = UIBezierPath(arcCenter: self.center, radius: CGFloat(80), startAngle: CGFloat(0), endAngle:CGFloat(M_PI * 2), clockwise: true)
         
+        
+        
+        
         // Configure the layer.
         let shapeLayer = CAShapeLayer()
         shapeLayer.strokeColor = Constants.ColorPalette.green.CGColor
@@ -52,6 +61,7 @@ class SonarAnnotationView: MKAnnotationView {
         // This is the path that's visible when there'd be no animation.
         shapeLayer.path = circlePath1.CGPath
         self.layer.addSublayer(shapeLayer)
+        self.layer.backgroundColor = UIColor.blackColor().CGColor
         
         // Animate the path.
         let pathAnimation = CABasicAnimation(keyPath: "path")
@@ -74,6 +84,9 @@ class SonarAnnotationView: MKAnnotationView {
         animationGroup.removedOnCompletion = false
         animationGroup.fillMode = kCAFillModeForwards
         
+        let a1nimationGroup = CAAnimationGroup()
+        a1nimationGroup.beginTime = beginTime
+        
         // Add the animation to the layer.
         shapeLayer.addAnimation(animationGroup, forKey: "sonar")
 
@@ -84,8 +97,6 @@ class SonarAnnotationView: MKAnnotationView {
         sonar(CACurrentMediaTime())
         sonar(CACurrentMediaTime() + 0.92)
         sonar(CACurrentMediaTime() + 1.84)
-        
-        
     }
     
 }
