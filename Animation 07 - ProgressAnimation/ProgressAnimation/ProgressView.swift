@@ -57,6 +57,7 @@ class ProgressView: UIView {
 //        progressLayer.position = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2)
         progressLayer.lineWidth = 3.0
         progressLayer.strokeEnd = 0.0
+        progressLayer.strokeStart = 0.5
         progressLayer.fillColor = nil
         progressLayer.strokeColor = UIColor.blackColor().CGColor
 
@@ -79,6 +80,10 @@ class ProgressView: UIView {
         gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
         gradientLayer.mask = progressLayer // Use progress layer as mask for gradient layer.
         layer.addSublayer(gradientLayer)
+        
+        
+        
+        // strokeEnd 是shapeLayer 的一个属性,和strokeStart是相互对应的.两者都是用的相对坐标,0.0到1.0,strokeStart是开始的位置,strokeEnd是结束的位置,表示绘画边缘条线的范围.如果是strat大于end,不绘制边缘.这个例子,不填充shapeLayer,然后让shapeLayer作为下面gradientLayer的mask,对shapelayer的strokeEnd做动画,最终完成了效果.
     }
     
     func animateStroke() {

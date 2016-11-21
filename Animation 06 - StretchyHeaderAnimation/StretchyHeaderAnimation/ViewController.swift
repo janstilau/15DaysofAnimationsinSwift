@@ -38,7 +38,7 @@ class ViewController: UITableViewController {
         headerView.layer.borderWidth = 2.0
         tableView.tableHeaderView = nil
         
-        tableView.addSubview(headerView)
+//        tableView.addSubview(headerView)
         
         tableView.contentInset = UIEdgeInsets(top: tableHeaderHeight, left: 0, bottom: 0, right: 0)
         tableView.contentOffset = CGPoint(x: 0, y: -tableHeaderHeight)
@@ -78,6 +78,8 @@ class ViewController: UITableViewController {
         }
         
         headerView.frame = headerRect
+        
+        // 这里需要理解,tableview的坐标系下面的坐标点怎么算.对于tableview来说,它的00点就是左上角的点,这个左上角,如果没有headerView,就是第一个cell的左上角,如果有headerView的话,那就是headerView的左上角.这个效果,headerView跟随者tableview滚动,没有办法实现.所以,手动的调整这个我们自定义的headerview的大小和位置.
     }
     
     // MARK: - Satus Bar
